@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Finite State Machines</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Finite State Machines</h1>
 <h2>Summary</h2>
-<p>A <strong>finite state machine</strong> (or <strong>finite automaton</strong>) is an abstract computational model with a fixed, finite memory. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Structures for Computation</a>.</p>
+<p>A <strong>finite state machine</strong> (or <strong>finite automaton</strong>) is an abstract computational model with a fixed, finite memory. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Discrete Structures for Computation</a>.</p>
 <ul>
 <li>Deterministic and nondeterministic automata
 <ul>

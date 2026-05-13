@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Sequences</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Sequences</h1>
 <h2>Summary</h2>
-<p>A <strong>sequence</strong> is a function from the natural numbers to some set (often $\mathbb{R}$) that describes discrete, ordered data. Part of <a href="/discrete_math_outline.html" class="wikilink">Sequences, Asymptotics, and Discrete Calculus</a>.</p>
+<p>A <strong>sequence</strong> is a function from the natural numbers to some set (often $\mathbb{R}$) that describes discrete, ordered data. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Sequences, Asymptotics, and Discrete Calculus</a>.</p>
 <ul>
 <li>Arithmetic and geometric sequences
 <ul>
@@ -46,7 +47,7 @@ a_0\dfrac{1 - r^n}{1 - r} \text{ for } r \neq 1.
 <ul>
 <li>A <strong>polynomial sequence</strong> is one in which $a_n$ is a polynomial of fixed degree in $n$.</li>
 <li>An <strong>exponential sequence</strong> has the form $a_n = c \cdot r^n$ with $|r| &gt; 1$.</li>
-<li>Exponential growth eventually dominates polynomial growth (see <a href="/asymptotic_notation.html" class="wikilink">asymptotic_notation</a>).</li>
+<li>Exponential growth eventually dominates polynomial growth (see <a href="/aisl-opp/asymptotic_notation.html" class="wikilink">asymptotic_notation</a>).</li>
 </ul>
 </li>
 </ul>

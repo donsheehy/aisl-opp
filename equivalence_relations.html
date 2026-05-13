@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Equivalence Relations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Equivalence Relations</h1>
 <h2>Summary</h2>
-<p>An <strong>equivalence relation</strong> on a set $A$ is a <a href="/relations.html" class="wikilink">relation</a> $R$ that is reflexive, symmetric, and transitive. Part of <a href="/discrete_math_outline.html" class="wikilink">Functions and Relations</a>.</p>
+<p>An <strong>equivalence relation</strong> on a set $A$ is a <a href="/aisl-opp/relations.html" class="wikilink">relation</a> $R$ that is reflexive, symmetric, and transitive. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Functions and Relations</a>.</p>
 <ul>
 <li>Equivalence classes and quotients
 <ul>
@@ -38,7 +39,7 @@
 </li>
 <li>Partition correspondence
 <ul>
-<li>The classes of $R$ form a <a href="/indexed_families.html" class="wikilink">partition</a> of $A$.</li>
+<li>The classes of $R$ form a <a href="/aisl-opp/indexed_families.html" class="wikilink">partition</a> of $A$.</li>
 <li>Conversely, any partition of $A$ induces an equivalence relation whose classes are the parts.</li>
 </ul>
 </li>
@@ -46,7 +47,7 @@
 <div class="theorem">
 <p>Equivalence relations on $A$ are in bijection with partitions of $A$.</p>
 </div>
-<p>Standard examples include congruence modulo $n$ (see <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>) and <a href="/graph_isomorphism.html" class="wikilink">graph_isomorphism</a>.</p>
+<p>Standard examples include congruence modulo $n$ (see <a href="/aisl-opp/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>) and <a href="/aisl-opp/graph_isomorphism.html" class="wikilink">graph_isomorphism</a>.</p>
 
 </body>
 </html>

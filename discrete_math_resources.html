@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Free Online Resources for Discrete Mathematics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Free Online Resources for Discrete Mathematics</h1>
 <h2>Summary</h2>
-<p>This note is a curated list of free, openly licensed <strong>discrete mathematics</strong> textbooks and courses. Textbooks are prioritized; supplementary courses follow. See <a href="/discrete_math_outline.html" class="wikilink">discrete_math_outline</a> for the topic map.</p>
+<p>This note is a curated list of free, openly licensed <strong>discrete mathematics</strong> textbooks and courses. Textbooks are prioritized; supplementary courses follow. See <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">discrete_math_outline</a> for the topic map.</p>
 <h2>Open-Access Textbooks</h2>
 <h3>Discrete Mathematics: An Open Introduction — Oscar Levin</h3>
 <p>A widely adopted CC BY-SA textbook aimed at first/second-year math and CS undergraduates. Covers logic, proofs, graph theory, counting, sequences, induction, sets, functions, generating functions, and number theory. Over 750 exercises with many solutions/hints.</p>
@@ -40,7 +41,7 @@
 <li>LibreTexts mirror: <a href="https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_(Levin)">https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_(Levin)</a></li>
 </ul>
 <h3>Mathematics for Computer Science — Lehman, Leighton, Meyer (MIT)</h3>
-<p>The textbook used in MIT's 6.042J course. CC BY-SA. Strong on proofs, induction, graph theory, counting, and discrete probability — with a CS-flavored orientation (state machines, invariants, asymptotics). Excellent companion to the <a href="/mit_6042_course.html" class="wikilink">MIT OCW lectures</a>.</p>
+<p>The textbook used in MIT's 6.042J course. CC BY-SA. Strong on proofs, induction, graph theory, counting, and discrete probability — with a CS-flavored orientation (state machines, invariants, asymptotics). Excellent companion to the <a href="/aisl-opp/mit_6042_course.html" class="wikilink">MIT OCW lectures</a>.</p>
 <ul>
 <li>PDF (author copy): <a href="https://people.csail.mit.edu/meyer/mcs.pdf">https://people.csail.mit.edu/meyer/mcs.pdf</a></li>
 <li>PDF (Spring 2018): <a href="https://courses.csail.mit.edu/6.042/spring18/mcs.pdf">https://courses.csail.mit.edu/6.042/spring18/mcs.pdf</a></li>
@@ -101,7 +102,7 @@
 </ul>
 <h2>Suggested Reading Path</h2>
 <ol>
-<li>Start with <a href="/book_of_proof.html" class="wikilink">Book of Proof</a> (Hammack) for proof fluency, or skip directly to Levin's chapter 1 if comfortable with proofs.</li>
+<li>Start with <a href="/aisl-opp/book_of_proof.html" class="wikilink">Book of Proof</a> (Hammack) for proof fluency, or skip directly to Levin's chapter 1 if comfortable with proofs.</li>
 <li>Work through Levin's <em>Discrete Mathematics: An Open Introduction</em> end-to-end as the primary text.</li>
 <li>Supplement with Lehman/Leighton/Meyer for CS-flavored treatment of induction, state machines, asymptotics, and probability.</li>
 <li>Move to Keller &amp; Trotter's <em>Applied Combinatorics</em> for deeper enumeration, generating functions, and posets.</li>

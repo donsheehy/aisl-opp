@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Boolean Algebra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Boolean Algebra</h1>
 <h2>Summary</h2>
-<p><strong>Boolean algebra</strong> is the algebra of two-valued logic, with operations and identities governing the manipulation of truth values. Part of <a href="/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
+<p><strong>Boolean algebra</strong> is the algebra of two-valued logic, with operations and identities governing the manipulation of truth values. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
 <ul>
 <li>Axioms and identities
 <ul>
@@ -40,7 +41,7 @@
 <ul>
 <li>A <strong>Boolean function</strong> is a function $f : {0,1}^n \to {0,1}$.</li>
 <li>Boolean functions are realized by logic gates ($\mathrm{AND}$, $\mathrm{OR}$, $\mathrm{NOT}$); the set ${\mathrm{NAND}}$ alone is functionally complete.</li>
-<li>Boolean algebra connects directly to <a href="/propositional_logic.html" class="wikilink">propositional_logic</a>.</li>
+<li>Boolean algebra connects directly to <a href="/aisl-opp/propositional_logic.html" class="wikilink">propositional_logic</a>.</li>
 </ul>
 </li>
 <li>Simplification (Karnaugh maps)

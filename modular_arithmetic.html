@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Modular Arithmetic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,18 +29,18 @@
 <body>
   <h1>Modular Arithmetic</h1>
 <h2>Summary</h2>
-<p><strong>Modular arithmetic</strong> is arithmetic in the quotient $\mathbb{Z}/n\mathbb{Z}$ obtained by identifying integers that are congruent modulo $n$. Part of <a href="/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
+<p><strong>Modular arithmetic</strong> is arithmetic in the quotient $\mathbb{Z}/n\mathbb{Z}$ obtained by identifying integers that are congruent modulo $n$. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
 <ul>
 <li>Congruences and residue classes
 <ul>
 <li>We say $a$ <strong>is congruent to</strong> $b$ modulo $n$, written $a \equiv b \pmod{n}$, if $n \mid (a - b)$.</li>
-<li>Congruence modulo $n$ is an <a href="/equivalence_relations.html" class="wikilink">equivalence relation</a>; its equivalence classes are called <strong>residue classes</strong> mod $n$.</li>
+<li>Congruence modulo $n$ is an <a href="/aisl-opp/equivalence_relations.html" class="wikilink">equivalence relation</a>; its equivalence classes are called <strong>residue classes</strong> mod $n$.</li>
 </ul>
 </li>
 <li>Modular inverses
 <ul>
-<li>An integer $a$ has a multiplicative inverse mod $n$ if and only if the <a href="/gcd.html" class="wikilink">greatest common divisor</a> satisfies $\gcd(a, n) = 1$.</li>
-<li>The inverse can be computed via the extended Euclidean algorithm (see <a href="/gcd.html" class="wikilink">gcd</a>).</li>
+<li>An integer $a$ has a multiplicative inverse mod $n$ if and only if the <a href="/aisl-opp/gcd.html" class="wikilink">greatest common divisor</a> satisfies $\gcd(a, n) = 1$.</li>
+<li>The inverse can be computed via the extended Euclidean algorithm (see <a href="/aisl-opp/gcd.html" class="wikilink">gcd</a>).</li>
 </ul>
 </li>
 </ul>
@@ -47,7 +48,7 @@
 <p><strong>Chinese Remainder Theorem:</strong> for pairwise coprime moduli $n_1, \ldots, n_k$, the system $x \equiv a_i \pmod{n_i}$ has a unique solution modulo $n_1 n_2 \cdots n_k$.</p>
 </div>
 <div class="theorem">
-<p><strong>Fermat's Little Theorem:</strong> if $p$ is <a href="/primes.html" class="wikilink">prime</a> and $p \nmid a$, then $a^{p-1} \equiv 1 \pmod{p}$.</p>
+<p><strong>Fermat's Little Theorem:</strong> if $p$ is <a href="/aisl-opp/primes.html" class="wikilink">prime</a> and $p \nmid a$, then $a^{p-1} \equiv 1 \pmod{p}$.</p>
 </div>
 <div class="theorem">
 <p><strong>Euler's Theorem:</strong> if $\gcd(a, n) = 1$, then $a^{\varphi(n)} \equiv 1 \pmod{n}$, where $\varphi(n)$ denotes <strong>Euler's totient function</strong>, the count of integers in ${1, \ldots, n}$ coprime to $n$.</p>

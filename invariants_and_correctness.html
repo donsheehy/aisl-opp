@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Invariants and Correctness</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Invariants and Correctness</h1>
 <h2>Summary</h2>
-<p><strong>Invariants</strong> are properties preserved throughout a computation; they are the primary tool for proving correctness of programs and processes. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Structures for Computation</a>.</p>
+<p><strong>Invariants</strong> are properties preserved throughout a computation; they are the primary tool for proving correctness of programs and processes. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Discrete Structures for Computation</a>.</p>
 <ul>
 <li>Loop invariants
 <ul>
@@ -39,7 +40,7 @@
 </li>
 <li>State-machine invariants
 <ul>
-<li>In a <a href="/finite_state_machines.html" class="wikilink">state machine</a>, a <strong>preserved invariant</strong> is a property $P$ such that $P(q)$ and $q \to q'$ together imply $P(q')$.</li>
+<li>In a <a href="/aisl-opp/finite_state_machines.html" class="wikilink">state machine</a>, a <strong>preserved invariant</strong> is a property $P$ such that $P(q)$ and $q \to q'$ together imply $P(q')$.</li>
 <li>If $P$ holds at the initial state, it holds at every reachable state.</li>
 </ul>
 </li>
@@ -47,7 +48,7 @@
 <ul>
 <li>A <strong>well-founded ordering</strong> is one with no infinite descending chains.</li>
 <li>Exhibit a function from states to a well-founded set that strictly decreases at each step to guarantee termination.</li>
-<li>The <a href="/mathematical_induction.html" class="wikilink">well-ordering principle</a> is the prototype.</li>
+<li>The <a href="/aisl-opp/mathematical_induction.html" class="wikilink">well-ordering principle</a> is the prototype.</li>
 </ul>
 </li>
 </ul>

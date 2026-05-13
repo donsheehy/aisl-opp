@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Proof Techniques</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Proof Techniques</h1>
 <h2>Summary</h2>
-<p><strong>Proof techniques</strong> are the standard methods for establishing the truth of mathematical statements. Part of <a href="/discrete_math_outline.html" class="wikilink">Logic and Proofs</a>.</p>
+<p><strong>Proof techniques</strong> are the standard methods for establishing the truth of mathematical statements. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Logic and Proofs</a>.</p>
 <ul>
 <li>Direct proof
 <ul>
@@ -68,7 +69,7 @@
 </ul>
 </li>
 </ul>
-<p>See also <a href="/mathematical_induction.html" class="wikilink">mathematical_induction</a> for inductive proofs.</p>
+<p>See also <a href="/aisl-opp/mathematical_induction.html" class="wikilink">mathematical_induction</a> for inductive proofs.</p>
 
 </body>
 </html>

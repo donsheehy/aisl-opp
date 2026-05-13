@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Binary Operations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Binary Operations</h1>
 <h2>Summary</h2>
-<p>A <strong>binary operation</strong> on a set $A$ is a function $\ast : A \times A \to A$ that combines two elements to produce a third element of $A$. Part of <a href="/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
+<p>A <strong>binary operation</strong> on a set $A$ is a function $\ast : A \times A \to A$ that combines two elements to produce a third element of $A$. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
 <ul>
 <li>Closure
 <ul>
@@ -56,7 +57,7 @@
 </ul>
 </li>
 </ul>
-<p>These properties give rise to monoids, <a href="/groups_intro.html" class="wikilink">groups</a>, rings, and other algebraic structures.</p>
+<p>These properties give rise to monoids, <a href="/aisl-opp/groups_intro.html" class="wikilink">groups</a>, rings, and other algebraic structures.</p>
 
 </body>
 </html>

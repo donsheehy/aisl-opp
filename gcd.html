@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Greatest Common Divisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,7 +29,7 @@
 <body>
   <h1>Greatest Common Divisor</h1>
 <h2>Summary</h2>
-<p>The <strong>greatest common divisor</strong> $\gcd(a, b)$ of two integers $a$ and $b$ (not both zero) is the largest positive integer that <a href="/divisibility.html" class="wikilink">divides</a> both. Part of <a href="/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
+<p>The <strong>greatest common divisor</strong> $\gcd(a, b)$ of two integers $a$ and $b$ (not both zero) is the largest positive integer that <a href="/aisl-opp/divisibility.html" class="wikilink">divides</a> both. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
 <ul>
 <li>Definition and basic properties
 <ul>
@@ -52,7 +53,7 @@
 <li>Extended Euclidean algorithm
 <ul>
 <li>The <strong>extended Euclidean algorithm</strong> additionally returns integers $x, y$ satisfying $ax + by = \gcd(a, b)$.</li>
-<li>These coefficients certify Bézout's identity and yield the modular inverse of $a$ mod $n$ when $\gcd(a, n) = 1$ (see <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>).</li>
+<li>These coefficients certify Bézout's identity and yield the modular inverse of $a$ mod $n$ when $\gcd(a, n) = 1$ (see <a href="/aisl-opp/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>).</li>
 </ul>
 </li>
 </ul>
@@ -64,9 +65,9 @@ ax + by = \gcd(a, b).
 Moreover, $\gcd(a, b)$ is the smallest positive integer expressible in the form $ax + by$.</p>
 </div>
 <div class="theorem">
-<p><strong>Euclid's lemma:</strong> if a <a href="/primes.html" class="wikilink">prime</a> $p$ divides a product $ab$, then $p \mid a$ or $p \mid b$. More generally, if $\gcd(a, n) = 1$ and $n \mid ab$, then $n \mid b$.</p>
+<p><strong>Euclid's lemma:</strong> if a <a href="/aisl-opp/primes.html" class="wikilink">prime</a> $p$ divides a product $ab$, then $p \mid a$ or $p \mid b$. More generally, if $\gcd(a, n) = 1$ and $n \mid ab$, then $n \mid b$.</p>
 </div>
-<p>Foundational for <a href="/primes.html" class="wikilink">primes</a>, <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>, and <a href="/number_theory_applications.html" class="wikilink">number_theory_applications</a>.</p>
+<p>Foundational for <a href="/aisl-opp/primes.html" class="wikilink">primes</a>, <a href="/aisl-opp/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>, and <a href="/aisl-opp/number_theory_applications.html" class="wikilink">number_theory_applications</a>.</p>
 
 </body>
 </html>

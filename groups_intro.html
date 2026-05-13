@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <base href="/aisl-opp/">
   <title>Groups (Intro)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="hljs-github.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
   <script>
     async function renderMath() {
-      const response = await fetch('/macros.json');
+      const response = await fetch('macros.json');
       const macros = await response.json();
       renderMathInElement(document.body, {
         macros,
@@ -28,12 +29,12 @@
 <body>
   <h1>Groups (Intro)</h1>
 <h2>Summary</h2>
-<p>A <strong>group</strong> is a set $G$ equipped with a <a href="/binary_operations.html" class="wikilink">binary operation</a> that is associative, has an identity element, and in which every element has an inverse. Part of <a href="/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
+<p>A <strong>group</strong> is a set $G$ equipped with a <a href="/aisl-opp/binary_operations.html" class="wikilink">binary operation</a> that is associative, has an identity element, and in which every element has an inverse. Part of <a href="/aisl-opp/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
 <ul>
 <li>Definitions and small examples
 <ul>
 <li>A group $(G, \ast)$ requires: associativity of $\ast$, an identity $e$, and an inverse $a^{-1}$ for each $a \in G$.</li>
-<li>Standard examples include $(\mathbb{Z}, +)$, $(\mathbb{Z}/n\mathbb{Z}, +)$ (see <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>), $({1,-1}, \cdot)$, and $(GL_n(\mathbb{R}), \cdot)$.</li>
+<li>Standard examples include $(\mathbb{Z}, +)$, $(\mathbb{Z}/n\mathbb{Z}, +)$ (see <a href="/aisl-opp/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>), $({1,-1}, \cdot)$, and $(GL_n(\mathbb{R}), \cdot)$.</li>
 </ul>
 </li>
 <li>Cyclic groups and permutation groups
