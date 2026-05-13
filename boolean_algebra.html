@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Boolean Algebra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Boolean Algebra</h1>
+<h2>Summary</h2>
+<p><strong>Boolean algebra</strong> is the algebra of two-valued logic, with operations and identities governing the manipulation of truth values. Part of <a href="/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
+<ul>
+<li>Axioms and identities
+<ul>
+<li>The operations $\wedge$, $\vee$, and $\neg$ on ${0, 1}$ satisfy associativity, commutativity, distributivity, identity elements $0$ and $1$, and complement laws.</li>
+<li><strong>Duality:</strong> any identity remains valid when $\wedge$ and $\vee$ are swapped and $0$ and $1$ are swapped.</li>
+</ul>
+</li>
+<li>Boolean functions and circuits
+<ul>
+<li>A <strong>Boolean function</strong> is a function $f : {0,1}^n \to {0,1}$.</li>
+<li>Boolean functions are realized by logic gates ($\mathrm{AND}$, $\mathrm{OR}$, $\mathrm{NOT}$); the set ${\mathrm{NAND}}$ alone is functionally complete.</li>
+<li>Boolean algebra connects directly to <a href="/propositional_logic.html" class="wikilink">propositional_logic</a>.</li>
+</ul>
+</li>
+<li>Simplification (Karnaugh maps)
+<ul>
+<li>A <strong>Karnaugh map</strong> is a graphical method for minimizing Boolean expressions of up to four to six variables.</li>
+<li>Groups of adjacent 1-cells correspond to product terms in a minimal sum-of-products form.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

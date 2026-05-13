@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Discrete Calculus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Discrete Calculus</h1>
+<h2>Summary</h2>
+<p><strong>Discrete calculus</strong> is a finite-difference analogue of differential calculus, especially useful for evaluating <a href="/summations.html" class="wikilink">summations</a> and solving <a href="/recurrence_relations.html" class="wikilink">recurrences</a>. Part of <a href="/discrete_math_outline.html" class="wikilink">Sequences, Asymptotics, and Discrete Calculus</a>.</p>
+<ul>
+<li>Finite differences
+<ul>
+<li>The <strong>forward difference</strong> operator is $\Delta f(n) = f(n+1) - f(n)$, a linear operator playing the role of differentiation.</li>
+</ul>
+</li>
+<li>Falling and rising powers
+<ul>
+<li>The <strong>falling power</strong> (also called <strong>falling factorial</strong> or <strong>descending factorial</strong>) is $n^{\underline{k}} = n(n-1)\cdots(n-k+1)$, the discrete analogue of $x^k$.</li>
+<li>The <strong>rising power</strong> (also called <strong>rising factorial</strong>) is $n^{\overline{k}} = n(n+1)\cdots(n+k-1)$.</li>
+</ul>
+</li>
+<li>Summation by parts
+<ul>
+<li><strong>Summation by parts</strong> is the discrete analogue of integration by parts.</li>
+</ul>
+</li>
+</ul>
+<div class="lemma">
+<p>$\Delta n^{\underline{k}} = k \cdot n^{\underline{k-1}}$ — the discrete analogue of the power rule.</p>
+</div>
+<div class="theorem">
+<p><strong>Summation by parts:</strong>
+\[
+\sum_{n=a}^{b-1} f(n) \Delta g(n) = \Big[f(n) g(n)\Big]<em>{a}^{b} - \sum</em>{n=a}^{b-1} g(n+1) \Delta f(n).
+\]</p>
+</div>
+
+</body>
+</html>

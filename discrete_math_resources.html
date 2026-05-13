@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Free Online Resources for Discrete Mathematics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Free Online Resources for Discrete Mathematics</h1>
+<h2>Summary</h2>
+<p>This note is a curated list of free, openly licensed <strong>discrete mathematics</strong> textbooks and courses. Textbooks are prioritized; supplementary courses follow. See <a href="/discrete_math_outline.html" class="wikilink">discrete_math_outline</a> for the topic map.</p>
+<h2>Open-Access Textbooks</h2>
+<h3>Discrete Mathematics: An Open Introduction — Oscar Levin</h3>
+<p>A widely adopted CC BY-SA textbook aimed at first/second-year math and CS undergraduates. Covers logic, proofs, graph theory, counting, sequences, induction, sets, functions, generating functions, and number theory. Over 750 exercises with many solutions/hints.</p>
+<ul>
+<li>HTML (4th ed.): <a href="https://discrete.openmathbooks.org/">https://discrete.openmathbooks.org/</a></li>
+<li>PDF (4th ed.): <a href="https://discrete.openmathbooks.org/pdfs/dmoi4.pdf">https://discrete.openmathbooks.org/pdfs/dmoi4.pdf</a></li>
+<li>Runestone interactive (4th ed.): <a href="https://runestone.academy/ns/books/published/dmoi-4/dmoi4.html">https://runestone.academy/ns/books/published/dmoi-4/dmoi4.html</a></li>
+<li>Open Textbook Library entry: <a href="https://open.umn.edu/opentextbooks/textbooks/394">https://open.umn.edu/opentextbooks/textbooks/394</a></li>
+<li>LibreTexts mirror: <a href="https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_(Levin)">https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Discrete_Mathematics_(Levin)</a></li>
+</ul>
+<h3>Mathematics for Computer Science — Lehman, Leighton, Meyer (MIT)</h3>
+<p>The textbook used in MIT's 6.042J course. CC BY-SA. Strong on proofs, induction, graph theory, counting, and discrete probability — with a CS-flavored orientation (state machines, invariants, asymptotics). Excellent companion to the <a href="/mit_6042_course.html" class="wikilink">MIT OCW lectures</a>.</p>
+<ul>
+<li>PDF (author copy): <a href="https://people.csail.mit.edu/meyer/mcs.pdf">https://people.csail.mit.edu/meyer/mcs.pdf</a></li>
+<li>PDF (Spring 2018): <a href="https://courses.csail.mit.edu/6.042/spring18/mcs.pdf">https://courses.csail.mit.edu/6.042/spring18/mcs.pdf</a></li>
+<li>Internet Archive: <a href="https://archive.org/details/MCS_LLM">https://archive.org/details/MCS_LLM</a></li>
+<li>Engineering LibreTexts: <a href="https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)">https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Mathematics_for_Computer_Science_(Lehman_Leighton_and_Meyer)</a></li>
+</ul>
+<h3>Book of Proof — Richard Hammack</h3>
+<p>A focused introduction to proof techniques, sets, logic, induction, relations, functions, and infinite cardinality. Approved by AIM's Open Textbook Initiative. Useful as a &quot;bridge&quot; text before or alongside a full discrete math book.</p>
+<ul>
+<li>Home page: <a href="https://richardhammack.github.io/BookOfProof/">https://richardhammack.github.io/BookOfProof/</a></li>
+<li>PDF (3rd ed.): <a href="https://richardhammack.github.io/BookOfProof/Main.pdf">https://richardhammack.github.io/BookOfProof/Main.pdf</a></li>
+<li>Open Textbook Library entry: <a href="https://open.umn.edu/opentextbooks/textbooks/7">https://open.umn.edu/opentextbooks/textbooks/7</a></li>
+</ul>
+<h3>Applied Discrete Structures — Doerr &amp; Levasseur</h3>
+<p>Classroom-tested open textbook integrating SageMath. Covers sets, counting, logic, matrix algebra, relations, functions, recursion, graphs, trees, algebraic systems (groups, Boolean algebras, monoids), and coding theory.</p>
+<ul>
+<li>Open Textbook Library entry: <a href="https://open.umn.edu/opentextbooks/textbooks/160">https://open.umn.edu/opentextbooks/textbooks/160</a></li>
+</ul>
+<h3>Applied Combinatorics — Keller &amp; Trotter</h3>
+<p>Strong on enumeration, generating functions, recurrence relations, inclusion-exclusion, Polyá theory, posets, graphs, and discrete optimization. A natural follow-up after a first discrete math course.</p>
+<ul>
+<li>Home page (with HTML, PDF, ePub): <a href="https://www.appliedcombinatorics.org/appcomb/">https://www.appliedcombinatorics.org/appcomb/</a></li>
+</ul>
+<h3>A Spiral Workbook for Discrete Mathematics — Harris Kwong</h3>
+<p>Sophomore-level: logic, sets, proof techniques, basic number theory, functions, relations, elementary combinatorics. Emphasizes motivation and worked examples.</p>
+<ul>
+<li>Open SUNY Textbooks: <a href="https://textbooks.opensuny.org/a-spiral-workbook-for-discrete-mathematics/">https://textbooks.opensuny.org/a-spiral-workbook-for-discrete-mathematics/</a></li>
+</ul>
+<h3>Discrete Mathematics — Levasseur (LibreTexts curated bookshelves)</h3>
+<p>The LibreTexts Combinatorics and Discrete Mathematics bookshelf aggregates many openly-licensed sources, useful for cross-referencing topics.</p>
+<ul>
+<li><a href="https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics">https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics</a></li>
+</ul>
+<h2>Courses and Lecture Notes</h2>
+<h3>MIT OCW 6.042J — Mathematics for Computer Science</h3>
+<p>Full lecture videos, problem sets, exams, and notes. Pairs directly with the Lehman/Leighton/Meyer textbook above.</p>
+<ul>
+<li>Fall 2010 (with full video lectures): <a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/">https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/</a></li>
+<li>Spring 2015 textbook PDF: <a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/">https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/</a></li>
+<li>Open Learning Library (interactive, 2019): <a href="https://openlearninglibrary.mit.edu/courses/course-v1:OCW+6.042J+2T2019/about">https://openlearninglibrary.mit.edu/courses/course-v1:OCW+6.042J+2T2019/about</a></li>
+</ul>
+<h3>Saylor CS202 — Discrete Structures</h3>
+<p>Free, self-paced course assembled from open materials, with assessments.</p>
+<ul>
+<li><a href="https://learn.saylor.org/course/view.php?id=67">https://learn.saylor.org/course/view.php?id=67</a></li>
+</ul>
+<h3>Rutgers CS 205 — Introduction to Discrete Structures</h3>
+<p>Public course site with notes and slides on logic, proofs, combinatorics, probability, and graphs.</p>
+<ul>
+<li><a href="https://discrete.cs.rutgers.edu/">https://discrete.cs.rutgers.edu/</a></li>
+</ul>
+<h2>Aggregators and Indexes</h2>
+<ul>
+<li>AIM Open Textbook Initiative (approved discrete math texts): <a href="https://textbooks.aimath.org/textbooks/approved-textbooks/">https://textbooks.aimath.org/textbooks/approved-textbooks/</a></li>
+<li>Dana Ernst's free/open math textbook list: <a href="http://danaernst.com/resources/free-and-open-source-textbooks/">http://danaernst.com/resources/free-and-open-source-textbooks/</a></li>
+<li>FreeTechBooks — Discrete Mathematics: <a href="https://www.freetechbooks.com/discrete-mathematics-f65.html">https://www.freetechbooks.com/discrete-mathematics-f65.html</a></li>
+<li>E-Books Directory — Discrete Mathematics: <a href="https://www.e-booksdirectory.com/listing.php?category=54">https://www.e-booksdirectory.com/listing.php?category=54</a></li>
+</ul>
+<h2>Suggested Reading Path</h2>
+<ol>
+<li>Start with <a href="/book_of_proof.html" class="wikilink">Book of Proof</a> (Hammack) for proof fluency, or skip directly to Levin's chapter 1 if comfortable with proofs.</li>
+<li>Work through Levin's <em>Discrete Mathematics: An Open Introduction</em> end-to-end as the primary text.</li>
+<li>Supplement with Lehman/Leighton/Meyer for CS-flavored treatment of induction, state machines, asymptotics, and probability.</li>
+<li>Move to Keller &amp; Trotter's <em>Applied Combinatorics</em> for deeper enumeration, generating functions, and posets.</li>
+<li>Use MIT OCW 6.042J videos for any topic where another presentation would help.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://open.umn.edu/opentextbooks/textbooks/394">Discrete Mathematics: An Open Introduction — Open Textbook Library</a></li>
+<li><a href="https://discrete.openmathbooks.org/">Discrete Mathematics: An Open Introduction (4th ed.) HTML</a></li>
+<li><a href="https://people.csail.mit.edu/meyer/mcs.pdf">Mathematics for Computer Science — Meyer (MIT, PDF)</a></li>
+<li><a href="https://archive.org/details/MCS_LLM">Mathematics for Computer Science — Internet Archive</a></li>
+<li><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/">MIT OCW 6.042J Fall 2010</a></li>
+<li><a href="https://richardhammack.github.io/BookOfProof/">Book of Proof — Hammack</a></li>
+<li><a href="https://open.umn.edu/opentextbooks/textbooks/7">Book of Proof — Open Textbook Library</a></li>
+<li><a href="https://open.umn.edu/opentextbooks/textbooks/160">Applied Discrete Structures — Open Textbook Library</a></li>
+<li><a href="https://www.appliedcombinatorics.org/appcomb/">Applied Combinatorics — Keller &amp; Trotter</a></li>
+<li><a href="https://learn.saylor.org/course/view.php?id=67">Saylor CS202 — Discrete Structures</a></li>
+<li><a href="https://discrete.cs.rutgers.edu/">Rutgers CS 205 — Introduction to Discrete Structures</a></li>
+<li><a href="https://textbooks.aimath.org/textbooks/approved-textbooks/">AIM Open Textbook Initiative</a></li>
+</ul>
+
+</body>
+</html>

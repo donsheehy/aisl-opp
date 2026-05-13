@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mathematical Induction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Mathematical Induction</h1>
+<h2>Summary</h2>
+<p><strong>Mathematical induction</strong> is a family of <a href="/proof_techniques.html" class="wikilink">proof_techniques</a> for establishing statements indexed by the natural numbers or other well-founded sets. Part of <a href="/discrete_math_outline.html" class="wikilink">Logic and Proofs</a>.</p>
+<ul>
+<li>Weak (ordinary) induction
+<ul>
+<li>Prove $P(0)$ (base case) and $P(n) \rightarrow P(n+1)$ (inductive step) to conclude $\forall n \in \mathbb{N}, P(n)$.</li>
+</ul>
+</li>
+<li>Strong induction
+<ul>
+<li>In the inductive step, assume $P(0), \ldots, P(n)$ collectively to prove $P(n+1)$.</li>
+<li>Strong induction is logically equivalent to weak induction but is often more convenient when $P(n+1)$ depends on more than just $P(n)$.</li>
+</ul>
+</li>
+<li>Structural induction
+<ul>
+<li>Apply induction on the recursive structure of objects such as trees, lists, or formulas.</li>
+<li>The base case handles atoms; the inductive step handles each constructor.</li>
+</ul>
+</li>
+<li>Well-ordering principle
+<ul>
+<li>Every nonempty subset of $\mathbb{N}$ has a least element.</li>
+<li>The well-ordering principle is equivalent to ordinary induction over $\mathbb{N}$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

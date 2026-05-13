@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Set Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Set Operations</h1>
+<h2>Summary</h2>
+<p><strong>Set operations</strong> build new sets from existing ones using constructions such as union, intersection, and Cartesian product. Part of <a href="/discrete_math_outline.html" class="wikilink">Set Theory</a>. Builds on <a href="/sets_basics.html" class="wikilink">sets_basics</a>.</p>
+<ul>
+<li>Union, intersection, difference, complement
+<ul>
+<li>The <strong>union</strong> is $A \cup B = {x : x \in A \vee x \in B}$.</li>
+<li>The <strong>intersection</strong> is $A \cap B = {x : x \in A \wedge x \in B}$.</li>
+<li>The <strong>set difference</strong> is $A \setminus B = {x : x \in A \wedge x \notin B}$.</li>
+<li>The <strong>complement</strong> of $A$ relative to a universe $U$ is $A^c = U \setminus A$.</li>
+</ul>
+</li>
+<li>Cartesian products
+<ul>
+<li>The <strong>Cartesian product</strong> is $A \times B = {(a,b) : a \in A, b \in B}$.</li>
+<li>For finite sets, $|A \times B| = |A| \cdot |B|$.</li>
+</ul>
+</li>
+<li>Identities and Venn diagrams
+<ul>
+<li><strong>De Morgan's laws</strong> state $(A \cup B)^c = A^c \cap B^c$ and $(A \cap B)^c = A^c \cup B^c$.</li>
+<li><strong>Distributivity</strong> states $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

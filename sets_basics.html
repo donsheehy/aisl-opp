@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Set Basics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Set Basics</h1>
+<h2>Summary</h2>
+<p>A <strong>set</strong> is an unordered collection of distinct elements, taken as a primitive notion in mathematics. Part of <a href="/discrete_math_outline.html" class="wikilink">Set Theory</a>.</p>
+<ul>
+<li>Membership, subsets, equality, power sets
+<ul>
+<li>We write $x \in A$ to say that $x$ is a <strong>member</strong> (or <strong>element</strong>) of $A$.</li>
+<li>$A$ is a <strong>subset</strong> of $B$, written $A \subseteq B$, if $\forall x (x \in A \rightarrow x \in B)$.</li>
+<li>Two sets are equal ($A = B$) if and only if $A \subseteq B$ and $B \subseteq A$ (the <strong>axiom of extensionality</strong>).</li>
+<li>The <strong>power set</strong> of $A$ is $\mathcal{P}(A) = {S : S \subseteq A}$; for finite $A$, $|\mathcal{P}(A)| = 2^{|A|}$.</li>
+</ul>
+</li>
+<li>Set-builder notation
+<ul>
+<li>The notation ${x \in U : P(x)}$ specifies the set of all elements of $U$ satisfying predicate $P$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

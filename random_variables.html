@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Random Variables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Random Variables</h1>
+<h2>Summary</h2>
+<p>A <strong>random variable</strong> is a function $X : \Omega \to \mathbb{R}$ on a probability space that assigns a numerical value to each outcome. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Probability</a>.</p>
+<ul>
+<li>Discrete distributions
+<ul>
+<li>A <strong>Bernoulli</strong>$(p)$ random variable satisfies $\Pr[X=1] = p$ and $\Pr[X=0] = 1-p$.</li>
+<li>A <strong>binomial</strong>$(n, p)$ random variable satisfies $\Pr[X=k] = \binom{n}{k} p^k (1-p)^{n-k}$.</li>
+<li>A <strong>geometric</strong>$(p)$ random variable satisfies $\Pr[X=k] = (1-p)^{k-1} p$ for $k \geq 1$.</li>
+<li>A <strong>Poisson</strong>$(\lambda)$ random variable satisfies $\Pr[X=k] = \dfrac{\lambda^k e^{-\lambda}}{k!}$.</li>
+</ul>
+</li>
+<li>Probability mass functions
+<ul>
+<li>The <strong>probability mass function</strong> (PMF) of $X$ is $p_X(x) = \Pr[X = x]$, with $\sum_x p_X(x) = 1$.</li>
+</ul>
+</li>
+<li>Cumulative distribution functions
+<ul>
+<li>The <strong>cumulative distribution function</strong> (CDF) of $X$ is $F_X(x) = \Pr[X \leq x]$, which is non-decreasing and right-continuous.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

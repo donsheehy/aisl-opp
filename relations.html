@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Relations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Relations</h1>
+<h2>Summary</h2>
+<p>A <strong>binary relation</strong> between sets $A$ and $B$ is a subset $R \subseteq A \times B$. Part of <a href="/discrete_math_outline.html" class="wikilink">Functions and Relations</a>.</p>
+<ul>
+<li>Properties (for $R \subseteq A \times A$)
+<ul>
+<li>It is <strong>reflexive</strong> if $(a, a) \in R$ for every $a \in A$.</li>
+<li>It is <strong>symmetric</strong> if $(a, b) \in R$ implies $(b, a) \in R$.</li>
+<li>It is <strong>antisymmetric</strong> if $(a, b), (b, a) \in R$ together imply $a = b$.</li>
+<li>It is <strong>transitive</strong> if $(a, b), (b, c) \in R$ together imply $(a, c) \in R$.</li>
+</ul>
+</li>
+<li>Composition and inverse
+<ul>
+<li>The <strong>composition</strong> of $R$ and $S$, written $R \circ S$, is the relation ${(a, c) : \exists b, (a, b) \in S \text{ and } (b, c) \in R}$.</li>
+<li>The <strong>inverse</strong> of $R$, written $R^{-1}$, is the relation ${(b, a) : (a, b) \in R}$.</li>
+</ul>
+</li>
+</ul>
+<p>Specializations include <a href="/equivalence_relations.html" class="wikilink">equivalence_relations</a>, <a href="/partial_orders.html" class="wikilink">partial_orders</a>, and <a href="/functions.html" class="wikilink">functions</a> (the single-valued, total relations).</p>
+
+</body>
+</html>

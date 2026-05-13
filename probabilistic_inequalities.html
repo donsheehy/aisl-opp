@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Probabilistic Inequalities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Probabilistic Inequalities</h1>
+<h2>Summary</h2>
+<p><strong>Probabilistic inequalities</strong> are tail bounds that estimate the probability that a <a href="/random_variables.html" class="wikilink">random variable</a> deviates substantially from its expected value. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Probability</a>.</p>
+<ul>
+<li>Markov's inequality
+<ul>
+<li><strong>Markov's inequality</strong> bounds the probability that a nonnegative random variable exceeds a threshold, using only the expectation.</li>
+</ul>
+</li>
+<li>Chebyshev's inequality
+<ul>
+<li><strong>Chebyshev's inequality</strong> bounds the probability of deviation from the mean in terms of the variance.</li>
+</ul>
+</li>
+<li>Chernoff bounds
+<ul>
+<li><strong>Chernoff bounds</strong> give exponentially decaying tail probabilities for sums of independent bounded random variables, via $\Pr[X \geq a] \leq e^{-ta} \mathbb{E}[e^{tX}]$.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Markov's inequality:</strong> for nonnegative $X$ and $a &gt; 0$, $\Pr[X \geq a] \leq \dfrac{\mathbb{E}[X]}{a}$.</p>
+</div>
+<div class="theorem">
+<p><strong>Chebyshev's inequality:</strong> for any $X$ with finite variance, $\Pr[|X - \mathbb{E}[X]| \geq k \sigma_X] \leq \dfrac{1}{k^2}$.</p>
+</div>
+
+</body>
+</html>

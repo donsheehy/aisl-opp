@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Special Graph Classes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Special Graph Classes</h1>
+<h2>Summary</h2>
+<p><strong>Special graph classes</strong> are families of <a href="/graph_basics.html" class="wikilink">graphs</a> with additional structural properties, such as bipartiteness or planarity. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Bipartite graphs
+<ul>
+<li>A graph is <strong>bipartite</strong> if its vertex set partitions into two parts $X$ and $Y$ with all edges running between them; equivalently, a graph is bipartite if and only if it contains no odd cycle.</li>
+<li><strong>König's theorem</strong> states that in a bipartite graph, the maximum <a href="/matching.html" class="wikilink">matching</a> size equals the minimum vertex cover size.</li>
+</ul>
+</li>
+<li>Planar graphs
+<ul>
+<li>A graph is <strong>planar</strong> if it can be drawn in the plane without edge crossings.</li>
+<li>For a connected planar graph, <strong>Euler's formula</strong> gives $V - E + F = 2$, where $F$ is the number of faces.</li>
+<li>A simple planar graph satisfies $E \leq 3V - 6$.</li>
+</ul>
+</li>
+<li>Kuratowski's theorem
+<ul>
+<li>A finite graph is planar if and only if it contains no subdivision of $K_5$ or $K_{3,3}$.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>König's theorem:</strong> in a bipartite graph, the maximum matching size equals the minimum vertex cover size.</p>
+</div>
+<div class="theorem">
+<p><strong>Euler's formula:</strong> for a connected planar graph, $V - E + F = 2$, where $F$ is the number of faces.</p>
+</div>
+<div class="theorem">
+<p><strong>Kuratowski's theorem:</strong> a finite graph is planar if and only if it contains no subdivision of $K_5$ or $K_{3,3}$.</p>
+</div>
+
+</body>
+</html>

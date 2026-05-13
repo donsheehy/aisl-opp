@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Binary Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Binary Operations</h1>
+<h2>Summary</h2>
+<p>A <strong>binary operation</strong> on a set $A$ is a function $\ast : A \times A \to A$ that combines two elements to produce a third element of $A$. Part of <a href="/discrete_math_outline.html" class="wikilink">Algebraic Structures</a>.</p>
+<ul>
+<li>Closure
+<ul>
+<li>Closure holds automatically when $\ast$ is defined as a function into $A$.</li>
+</ul>
+</li>
+<li>Associativity
+<ul>
+<li>$\ast$ is <strong>associative</strong> if $(a \ast b) \ast c = a \ast (b \ast c)$ for all $a, b, c \in A$.</li>
+</ul>
+</li>
+<li>Commutativity
+<ul>
+<li>$\ast$ is <strong>commutative</strong> if $a \ast b = b \ast a$ for all $a, b \in A$.</li>
+</ul>
+</li>
+<li>Identity element
+<ul>
+<li>An <strong>identity element</strong> $e$ satisfies $e \ast a = a \ast e = a$ for all $a \in A$.</li>
+</ul>
+</li>
+<li>Inverses
+<ul>
+<li>An <strong>inverse</strong> of $a$ is an element $a^{-1}$ satisfying $a \ast a^{-1} = a^{-1} \ast a = e$.</li>
+</ul>
+</li>
+</ul>
+<p>These properties give rise to monoids, <a href="/groups_intro.html" class="wikilink">groups</a>, rings, and other algebraic structures.</p>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Divisibility</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Divisibility</h1>
+<h2>Summary</h2>
+<p><strong>Divisibility</strong> is the relation in which one integer is an exact multiple of another: we say <strong>$b$ divides $a$</strong>, written $b \mid a$, if there exists an integer $k$ such that $a = bk$. Part of <a href="/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
+<ul>
+<li>Division algorithm
+<ul>
+<li>For integers $a$ and $b &gt; 0$, there exist unique integers $q$ (the <strong>quotient</strong>) and $r$ (the <strong>remainder</strong>) satisfying $a = bq + r$ and $0 \leq r &lt; b$.</li>
+</ul>
+</li>
+<li>Greatest common divisor and least common multiple
+<ul>
+<li>The <a href="/gcd.html" class="wikilink">greatest common divisor</a> $\gcd(a, b)$ and the <strong>least common multiple</strong> $\mathrm{lcm}(a, b)$ are computed via the Euclidean algorithm.</li>
+<li>The extended Euclidean algorithm produces Bézout coefficients $x, y$ satisfying $ax + by = \gcd(a, b)$.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p>For integers $a$ and $b &gt; 0$, there exist unique integers $q, r$ with $a = bq + r$ and $0 \leq r &lt; b$.</p>
+</div>
+<p>Foundation for <a href="/gcd.html" class="wikilink">gcd</a>, <a href="/primes.html" class="wikilink">primes</a>, and <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>.</p>
+
+</body>
+</html>

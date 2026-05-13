@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Coloring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Graph Coloring</h1>
+<h2>Summary</h2>
+<p><strong>Graph coloring</strong> is the assignment of labels (colors) to the vertices of a <a href="/graph_basics.html" class="wikilink">graph</a> so that no two adjacent vertices share the same color. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Chromatic number and bounds
+<ul>
+<li>The <strong>chromatic number</strong> $\chi(G)$ is the smallest $k$ such that $G$ admits a proper $k$-coloring.</li>
+<li>A greedy bound gives $\chi(G) \leq \Delta(G) + 1$, where $\Delta(G)$ is the maximum degree.</li>
+<li>$\chi(G) = 2$ if and only if $G$ is bipartite (see <a href="/special_graph_classes.html" class="wikilink">special_graph_classes</a>).</li>
+</ul>
+</li>
+<li>Greedy coloring
+<ul>
+<li><strong>Greedy coloring</strong> processes vertices in some order, assigning each the smallest color not used by an already-colored neighbor.</li>
+<li>The vertex order matters; the greedy algorithm uses at most $\Delta(G) + 1$ colors.</li>
+</ul>
+</li>
+<li>Four color theorem
+<ul>
+<li>Every planar graph has chromatic number at most $4$.</li>
+<li>The four color theorem was the first major theorem proved with substantial computer assistance (Appel and Haken, 1976).</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Four color theorem:</strong> every planar graph has chromatic number at most $4$.</p>
+</div>
+
+</body>
+</html>

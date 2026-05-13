@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Applications of Number Theory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Applications of Number Theory</h1>
+<h2>Summary</h2>
+<p><strong>Number-theoretic applications</strong> are computer-science constructions built on <a href="/divisibility.html" class="wikilink">divisibility</a>, <a href="/primes.html" class="wikilink">primes</a>, and <a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>. Part of <a href="/discrete_math_outline.html" class="wikilink">Number Theory</a>.</p>
+<ul>
+<li>RSA cryptography
+<ul>
+<li>Keys are built from two large primes $p, q$ with modulus $n = pq$.</li>
+<li>Encryption computes $c \equiv m^e \pmod{n}$; decryption recovers $m \equiv c^d \pmod{n}$ with $ed \equiv 1 \pmod{\varphi(n)}$.</li>
+<li>Security relies on the apparent difficulty of factoring $n$.</li>
+</ul>
+</li>
+<li>Hashing
+<ul>
+<li>Simple hash functions use $h(x) = x \bmod p$ for a prime $p$.</li>
+<li>Universal hashing exploits modular arithmetic to give provable collision bounds.</li>
+</ul>
+</li>
+<li>Pseudorandom number generation
+<ul>
+<li><strong>Linear congruential generators</strong> use the recurrence $x_{n+1} = (a x_n + c) \bmod m$.</li>
+<li>The quality of the generated sequence depends on the choice of parameters $a$, $c$, and $m$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Summations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Summations</h1>
+<h2>Summary</h2>
+<p><strong>Summation</strong> techniques are methods for evaluating finite and infinite sums in closed form or asymptotically. Part of <a href="/discrete_math_outline.html" class="wikilink">Sequences, Asymptotics, and Discrete Calculus</a>.</p>
+<ul>
+<li>Sum manipulation rules
+<ul>
+<li><strong>Linearity</strong> states $\sum (a x_i + b y_i) = a \sum x_i + b \sum y_i$.</li>
+<li><strong>Reindexing</strong> shifts the summation variable: $\sum_{i=a}^{b} f(i) = \sum_{j=0}^{b-a} f(j+a)$.</li>
+<li><strong>Splitting</strong> breaks a sum at an intermediate index: $\sum_{i=a}^{c} = \sum_{i=a}^{b} + \sum_{i=b+1}^{c}$.</li>
+</ul>
+</li>
+<li>Closed forms for common sums
+<ul>
+<li>The sum of the first $n$ positive integers is $\sum_{i=1}^{n} i = \dfrac{n(n+1)}{2}$.</li>
+<li>The sum of squares is $\sum_{i=1}^{n} i^2 = \dfrac{n(n+1)(2n+1)}{6}$.</li>
+<li>The geometric sum satisfies $\sum_{i=0}^{n} r^i = \dfrac{1 - r^{n+1}}{1 - r}$ for $r \neq 1$.</li>
+</ul>
+</li>
+<li>Perturbation method
+<ul>
+<li>Extract the first or last term to write $S_n + a_{n+1} = a_0 + \sum_{i=0}^{n} a_{i+1}$.</li>
+<li>Rewrite the right side to obtain a solvable equation for $S_n$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

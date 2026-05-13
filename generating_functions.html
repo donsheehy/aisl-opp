@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Generating Functions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Generating Functions</h1>
+<h2>Summary</h2>
+<p>A <strong>generating function</strong> is a formal power series whose coefficients encode a sequence, converting combinatorial problems into algebraic ones. Part of <a href="/discrete_math_outline.html" class="wikilink">Combinatorics</a>.</p>
+<ul>
+<li>Ordinary generating functions
+<ul>
+<li>For a sequence $(a_n)$, the <strong>ordinary generating function</strong> (OGF) is:
+\[
+A(x) = \sum_{n \geq 0} a_n x^n.
+\]</li>
+<li>Operations on series correspond to combinatorial operations: addition, product, shift, and differentiation.</li>
+</ul>
+</li>
+<li>Exponential generating functions
+<ul>
+<li>The <strong>exponential generating function</strong> (EGF) is:
+\[
+A(x) = \sum_{n \geq 0} a_n \frac{x^n}{n!}.
+\]</li>
+<li>This form is well-suited to labeled structures; the product of two EGFs corresponds to merging labeled sets.</li>
+</ul>
+</li>
+<li>Solving recurrences via generating functions
+<ul>
+<li>Multiply <a href="/recurrence_relations.html" class="wikilink">the recurrence</a> by $x^n$ and sum over all $n$ to obtain an algebraic equation for $A(x)$.</li>
+<li>Solve for $A(x)$, then extract the coefficients using partial fractions or known series expansions.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

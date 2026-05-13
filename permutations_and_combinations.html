@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Permutations and Combinations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Permutations and Combinations</h1>
+<h2>Summary</h2>
+<p><strong>Permutations and combinations</strong> are the counts of ordered and unordered selections from a finite set. Part of <a href="/discrete_math_outline.html" class="wikilink">Combinatorics</a>. Builds on <a href="/basic_counting.html" class="wikilink">basic_counting</a>.</p>
+<ul>
+<li>$k$-permutations
+<ul>
+<li>A <strong>$k$-permutation</strong> of $n$ elements is an ordered selection of $k$ items from $n$ without repetition.</li>
+<li>The count is $P(n,k) = \dfrac{n!}{(n-k)!}$.</li>
+</ul>
+</li>
+<li>Binomial coefficients
+<ul>
+<li>A <strong>combination</strong> (or <strong>$k$-subset</strong>) is an unordered selection of $k$ items from $n$.</li>
+<li>The count is $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$.</li>
+</ul>
+</li>
+<li>Permutations with repetition
+<ul>
+<li>The number of length-$k$ sequences over an alphabet of size $n$ is $n^k$.</li>
+<li>The number of distinct permutations of a multiset with multiplicities $n_1, \ldots, n_r$ is $\dfrac{n!}{n_1! \cdots n_r!}$.</li>
+</ul>
+</li>
+<li>Combinations with repetition (multisets / stars and bars)
+<ul>
+<li>The number of multisets of size $k$ drawn from $n$ types is $\binom{n+k-1}{k}$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

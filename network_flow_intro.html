@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Network Flow (Intro)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Network Flow (Intro)</h1>
+<h2>Summary</h2>
+<p><strong>Network flow</strong> is the problem of routing flow through a directed graph subject to edge capacities, with the goal of maximizing flow from a source $s$ to a sink $t$. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Max-flow min-cut theorem
+<ul>
+<li>The <strong>max-flow min-cut theorem</strong> establishes a duality: the maximum $s$-$t$ flow equals the minimum capacity of an $s$-$t$ cut.</li>
+</ul>
+</li>
+<li>Augmenting path algorithms
+<ul>
+<li>The <strong>Ford–Fulkerson method</strong> repeatedly finds a path of positive residual capacity and pushes flow along it.</li>
+<li><strong>Edmonds–Karp</strong> refines Ford–Fulkerson by always choosing the shortest augmenting path, giving an $O(VE^2)$ runtime.</li>
+</ul>
+</li>
+<li>Applications of max flow
+<ul>
+<li>Many problems reduce to max flow, including bipartite <a href="/matching.html" class="wikilink">matching</a>, edge/vertex connectivity, and image segmentation.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Max-flow min-cut theorem:</strong> in any flow network, the maximum value of an $s$-$t$ flow equals the minimum capacity of an $s$-$t$ cut.</p>
+</div>
+
+</body>
+</html>

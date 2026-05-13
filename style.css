@@ -1,0 +1,84 @@
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  max-width: 740px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+  color: #222;
+}
+
+h1, h2, h3 {
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.2;
+}
+
+a { color: #0066cc; }
+
+a.wikilink { font-style: italic; }
+
+/* --- Math environments --- */
+
+.theorem, .lemma, .proposition, .definition, .remark, .example {
+  display: block;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+/* Labels are inserted by CSS so the markdown stays clean */
+.theorem p:first-child::before,
+.lemma p:first-child::before,
+.proposition p:first-child::before,
+.definition p:first-child::before,
+.remark p:first-child::before,
+.example p:first-child::before {
+  font-style: normal;
+  font-weight: bold;
+  color: #888;
+}
+
+.theorem p:first-child::before    { content: "Theorem. "; }
+.lemma p:first-child::before      { content: "Lemma. "; }
+.proposition p:first-child::before { content: "Proposition. "; }
+.definition p:first-child::before { content: "Definition. "; }
+.remark p:first-child::before     { content: "Remark. "; }
+.example p:first-child::before    { content: "Example. "; }
+
+/* Bold text inside italic environments reads as emphasis-within-emphasis,
+   so we render it upright and in a dark red instead */
+.theorem em, .lemma em, .proposition em, .definition em {
+  font-style: normal;
+  font-weight: bold;
+  color: #855;
+}
+
+/* --- Proof environment --- */
+
+.proof {
+  display: block;
+  margin: 1.5em 0;
+}
+
+.proof p:first-child::before {
+  content: "Proof. ";
+  font-weight: bold;
+  color: #888;
+}
+
+/* QED square, right-aligned on its own line after the proof body */
+.proof::after {
+  content: "□";
+  display: block;
+  text-align: right;
+}
+
+/* Fix KaTeX font size independently of the body font size. */
+.katex {
+  font-size: 1.2rem;
+}
+
+pre {
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+}

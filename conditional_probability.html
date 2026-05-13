@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Conditional Probability</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Conditional Probability</h1>
+<h2>Summary</h2>
+<p><strong>Conditional probability</strong> is the probability of one event given that another event has occurred. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Probability</a>. Builds on <a href="/probability_basics.html" class="wikilink">probability_basics</a>.</p>
+<ul>
+<li>Definition and law of total probability
+<ul>
+<li>The <strong>conditional probability</strong> of $A$ given $B$ is $\Pr[A \mid B] = \dfrac{\Pr[A \cap B]}{\Pr[B]}$ when $\Pr[B] &gt; 0$.</li>
+<li>The <strong>law of total probability</strong> states: if ${B_i}$ partitions $\Omega$, then
+\[
+\Pr[A] = \displaystyle\sum_i \Pr[A \mid B_i] \Pr[B_i].
+\]</li>
+</ul>
+</li>
+<li>Bayes' theorem
+<ul>
+<li><strong>Bayes' theorem</strong> inverts conditional probabilities and is foundational to Bayesian inference.</li>
+</ul>
+</li>
+<li>Independence of events
+<ul>
+<li>Events $A$ and $B$ are <strong>independent</strong> if $\Pr[A \cap B] = \Pr[A] \Pr[B]$, equivalently $\Pr[A \mid B] = \Pr[A]$ when $\Pr[B] &gt; 0$.</li>
+<li>Mutual independence of a family of events is strictly stronger than pairwise independence.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Bayes' theorem:</strong> $\Pr[B \mid A] = \dfrac{\Pr[A \mid B] \Pr[B]}{\Pr[A]}$.</p>
+</div>
+
+</body>
+</html>

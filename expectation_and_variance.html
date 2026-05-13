@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Expectation and Variance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Expectation and Variance</h1>
+<h2>Summary</h2>
+<p>The <strong>expected value</strong> and <strong>variance</strong> are the primary summary statistics of a <a href="/random_variables.html" class="wikilink">random variable</a>, measuring its center and spread. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Probability</a>.</p>
+<ul>
+<li>Expected value
+<ul>
+<li>The <strong>expected value</strong> (or <strong>mean</strong>) of a discrete random variable is $\mathbb{E}[X] = \displaystyle\sum_x x \cdot \Pr[X = x]$.</li>
+<li><strong>Linearity of expectation</strong> states $\mathbb{E}[aX + bY] = a \mathbb{E}[X] + b \mathbb{E}[Y]$ for any random variables $X, Y$ and constants $a, b$, with no independence assumption required.</li>
+</ul>
+</li>
+<li>Variance and standard deviation
+<ul>
+<li>The <strong>variance</strong> of $X$ is $\mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$.</li>
+<li>The <strong>standard deviation</strong> is $\sigma_X = \sqrt{\mathrm{Var}(X)}$.</li>
+</ul>
+</li>
+<li>Covariance and correlation
+<ul>
+<li>The <strong>covariance</strong> of $X$ and $Y$ is $\mathrm{Cov}(X, Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$.</li>
+<li>The <strong>correlation</strong> is $\rho(X,Y) = \dfrac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y} \in [-1, 1]$.</li>
+<li>If $X$ and $Y$ are independent then $\mathrm{Cov}(X,Y) = 0$, but the converse fails in general.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Linearity of expectation:</strong> for any random variables $X, Y$ and constants $a, b$, $\mathbb{E}[aX + bY] = a \mathbb{E}[X] + b \mathbb{E}[Y]$, with no independence assumption.</p>
+</div>
+
+</body>
+</html>

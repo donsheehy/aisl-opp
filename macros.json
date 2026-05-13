@@ -1,0 +1,8 @@
+{
+  "\\dist": "\\mathrm{d}",
+  "\\RR": "\\mathbb{R}",
+  "\\NN": "\\mathbb{N}",
+  "\\ZZ": "\\mathbb{Z}",
+  "\\QQ": "\\mathbb{Q}",
+  "\\CC": "\\mathbb{C}"
+}

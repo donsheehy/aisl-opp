@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Set Cardinality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Set Cardinality</h1>
+<h2>Summary</h2>
+<p>The <strong>cardinality</strong> of a set is a measure of its size, generalizing counting to infinite sets via bijections. Part of <a href="/discrete_math_outline.html" class="wikilink">Set Theory</a>.</p>
+<ul>
+<li>Finite vs. infinite sets
+<ul>
+<li>A set $A$ is <strong>finite</strong> if there is a bijection $A \to {1, \ldots, n}$ for some $n \geq 0$.</li>
+<li>Two sets have the same cardinality, written $|A| = |B|$, if and only if there exists a bijection $A \to B$.</li>
+</ul>
+</li>
+<li>Countable and uncountable sets
+<ul>
+<li>A set $A$ is <strong>countable</strong> if it is finite or has a bijection with $\mathbb{N}$; otherwise it is <strong>uncountable</strong>.</li>
+<li>The sets $\mathbb{Z}$ and $\mathbb{Q}$ are countable; $\mathbb{R}$ is uncountable.</li>
+</ul>
+</li>
+<li>Cantor's theorem and diagonalization
+<ul>
+<li><strong>Cantor's theorem</strong> states $|A| &lt; |\mathcal{P}(A)|$ for every set $A$.</li>
+<li>Cantor's diagonal argument shows that $\mathbb{R}$ is uncountable.</li>
+</ul>
+</li>
+</ul>
+<p>Closely related to <a href="/functions.html" class="wikilink">functions</a> (bijections) and to <a href="/primes.html" class="wikilink">the structure of $\mathbb{N}$</a>.</p>
+
+</body>
+</html>

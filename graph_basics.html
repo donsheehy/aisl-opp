@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Basics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Graph Basics</h1>
+<h2>Summary</h2>
+<p>A <strong>graph</strong> is a pair $G = (V, E)$ consisting of a set of <strong>vertices</strong> $V$ and a set of <strong>edges</strong> $E$, where each edge connects two vertices. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Degree and the handshake lemma
+<ul>
+<li>The <strong>degree</strong> $\deg(v)$ of a vertex $v$ is the number of edges incident to $v$ (loops count twice).</li>
+<li>The sum of all vertex degrees equals twice the number of edges.</li>
+</ul>
+</li>
+<li>Common variants
+<ul>
+<li>A <strong>simple graph</strong> has no loops or parallel edges.</li>
+<li>A <strong>multigraph</strong> allows parallel edges between the same pair of vertices.</li>
+<li>A <strong>digraph</strong> (directed graph) has edges that are ordered pairs.</li>
+</ul>
+</li>
+<li>Substructure
+<ul>
+<li>$H$ is a <strong>subgraph</strong> of $G$ if $V(H) \subseteq V(G)$ and $E(H) \subseteq E(G)$.</li>
+<li>Two graphs $G$ and $H$ are <strong>isomorphic</strong>, written $G \cong H$, if there is a bijection $V(G) \to V(H)$ preserving adjacency.</li>
+</ul>
+</li>
+</ul>
+<div class="lemma">
+<p><strong>Handshake lemma:</strong> $\displaystyle\sum_{v \in V} \deg(v) = 2|E|$. In particular, the number of odd-degree vertices is even.</p>
+</div>
+
+</body>
+</html>

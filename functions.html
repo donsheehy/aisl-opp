@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Functions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Functions</h1>
+<h2>Summary</h2>
+<p>A <strong>function</strong> $f : A \to B$ is a rule that assigns to each element $a \in A$ exactly one element $f(a) \in B$. Part of <a href="/discrete_math_outline.html" class="wikilink">Functions and Relations</a>.</p>
+<ul>
+<li>Domain, codomain, image, preimage
+<ul>
+<li>The <strong>domain</strong> of $f$ is $A$ and the <strong>codomain</strong> is $B$.</li>
+<li>The <strong>image</strong> of $f$ is $f(A) = {f(a) : a \in A} \subseteq B$.</li>
+<li>The <strong>preimage</strong> of a set $S \subseteq B$ is $f^{-1}(S) = {a \in A : f(a) \in S}$.</li>
+</ul>
+</li>
+<li>Injective, surjective, bijective
+<ul>
+<li>$f$ is <strong>injective</strong> (one-to-one) if $f(a_1) = f(a_2)$ implies $a_1 = a_2$.</li>
+<li>$f$ is <strong>surjective</strong> (onto) if $f(A) = B$.</li>
+<li>$f$ is <strong>bijective</strong> if it is both injective and surjective.</li>
+</ul>
+</li>
+<li>Composition and inverse functions
+<ul>
+<li>The <strong>composition</strong> $(g \circ f)(a) = g(f(a))$ is defined when the codomain of $f$ equals the domain of $g$.</li>
+<li>$f$ has a two-sided inverse if and only if $f$ is bijective.</li>
+</ul>
+</li>
+<li><a href="/pigeonhole_principle.html" class="wikilink">pigeonhole_principle</a> (as a function-counting tool)
+<ul>
+<li>If $|A| &gt; |B|$, then no function $f : A \to B$ is injective.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

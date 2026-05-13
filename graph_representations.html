@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Representations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Graph Representations</h1>
+<h2>Summary</h2>
+<p><strong>Graph representations</strong> are data structures for storing a <a href="/graph_basics.html" class="wikilink">graph</a> in memory, with different trade-offs between space, query time, and traversal efficiency. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Adjacency matrix
+<ul>
+<li>An <strong>adjacency matrix</strong> is an $n \times n$ matrix $A$ with $A_{ij} = 1$ if and only if ${i,j} \in E$ (or edge multiplicity for multigraphs).</li>
+<li>It uses $\Theta(n^2)$ space, supports $O(1)$ adjacency queries, and satisfies: $A^k_{ij}$ counts walks of length $k$.</li>
+</ul>
+</li>
+<li>Adjacency list
+<ul>
+<li>An <strong>adjacency list</strong> stores, for each vertex, the list of its neighbors.</li>
+<li>It uses $\Theta(n + m)$ space and is efficient for sparse graphs and traversal algorithms.</li>
+</ul>
+</li>
+<li>Incidence matrix
+<ul>
+<li>An <strong>incidence matrix</strong> is an $n \times m$ matrix $B$ with $B_{ve} = 1$ if and only if vertex $v$ is incident to edge $e$.</li>
+<li>It is useful in algebraic graph theory and for signed or oriented variants.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

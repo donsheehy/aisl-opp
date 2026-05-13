@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Asymptotic Notation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Asymptotic Notation</h1>
+<h2>Summary</h2>
+<p><strong>Asymptotic notation</strong> provides a vocabulary for comparing the growth rates of functions or <a href="/sequences.html" class="wikilink">sequences</a>, suppressing constant factors and lower-order terms. Part of <a href="/discrete_math_outline.html" class="wikilink">Sequences, Asymptotics, and Discrete Calculus</a>.</p>
+<ul>
+<li>Big-O, big-Omega, big-Theta
+<ul>
+<li>We write $f = O(g)$ (read &quot;<strong>big-O</strong> of $g$&quot;) if there exist $c, n_0$ such that $f(n) \leq c g(n)$ for all $n \geq n_0$.</li>
+<li>We write $f = \Omega(g)$ (read &quot;<strong>big-Omega</strong> of $g$&quot;) if there exist $c, n_0$ such that $f(n) \geq c g(n)$ for all $n \geq n_0$.</li>
+<li>We write $f = \Theta(g)$ (read &quot;<strong>big-Theta</strong> of $g$&quot;) if both $f = O(g)$ and $f = \Omega(g)$ hold.</li>
+</ul>
+</li>
+<li>Little-o, little-omega
+<ul>
+<li>We write $f = o(g)$ if $\lim_{n \to \infty} f(n)/g(n) = 0$, meaning $f$ grows strictly slower than $g$.</li>
+<li>We write $f = \omega(g)$ if $\lim_{n \to \infty} f(n)/g(n) = \infty$, meaning $f$ grows strictly faster than $g$.</li>
+</ul>
+</li>
+<li>Common growth rates
+<ul>
+<li>The standard hierarchy is $1 \prec \log n \prec \sqrt{n} \prec n \prec n \log n \prec n^2 \prec n^k \prec 2^n \prec n!$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

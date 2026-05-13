@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Recurrence Relations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Recurrence Relations</h1>
+<h2>Summary</h2>
+<p>A <strong>recurrence relation</strong> is an equation that defines each term of a <a href="/sequences.html" class="wikilink">sequence</a> in terms of earlier ones. Part of <a href="/discrete_math_outline.html" class="wikilink">Combinatorics</a>.</p>
+<ul>
+<li>Linear homogeneous recurrences
+<ul>
+<li>A <strong>linear homogeneous recurrence</strong> of order $k$ has the form
+\[
+T(n) = c_1 T(n-1) + \cdots + c_k T(n-k),
+\]
+where the coefficients $c_1, \ldots, c_k$ are constants.</li>
+<li>Such a recurrence is solved by guessing $T(n) = r^n$ and finding the roots of the resulting <strong>characteristic polynomial</strong>.</li>
+</ul>
+</li>
+<li>Linear non-homogeneous recurrences
+<ul>
+<li>A <strong>non-homogeneous recurrence</strong> adds a forcing term $F(n)$, giving
+\[
+T(n) = c_1 T(n-1) + \cdots + c_k T(n-k) + F(n).
+\]</li>
+<li>The general solution is the sum of the homogeneous solution and any particular solution.</li>
+</ul>
+</li>
+<li>Characteristic equations
+<ul>
+<li>For a recurrence of order $k$, the characteristic polynomial has degree $k$.</li>
+<li>Distinct roots $r_1, \ldots, r_k$ give
+\[
+T(n) = \sum_i \alpha_i r_i^n;
+\]
+repeated roots introduce polynomial factors in $n$.</li>
+</ul>
+</li>
+<li>Master theorem (algorithmic context)
+<ul>
+<li>For divide-and-conquer recurrences of the form $T(n) = aT(n/b) + F(n)$, the <strong>master theorem</strong> compares $F(n)$ to $n^{\log_b a}$ to give the asymptotic order of $T(n)$.</li>
+</ul>
+</li>
+</ul>
+<p>See also <a href="/generating_functions.html" class="wikilink">generating_functions</a> for an alternative solution method, and <a href="/asymptotic_notation.html" class="wikilink">asymptotic_notation</a> for the growth rates that appear in the master theorem.</p>
+
+</body>
+</html>

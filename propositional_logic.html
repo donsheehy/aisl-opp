@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Propositional Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Propositional Logic</h1>
+<h2>Summary</h2>
+<p><strong>Propositional logic</strong> is the branch of mathematical logic that studies propositions—atomic true/false statements—combined via logical connectives. Part of <a href="/discrete_math_outline.html" class="wikilink">Logic and Proofs</a>.</p>
+<ul>
+<li>Connectives, truth tables, tautologies, satisfiability
+<ul>
+<li>The standard connectives are negation $\neg$, conjunction $\wedge$, disjunction $\vee$, implication $\rightarrow$, and biconditional $\leftrightarrow$.</li>
+<li>A <strong>tautology</strong> is a formula that is true under every truth assignment.</li>
+<li>A formula is <strong>satisfiable</strong> if some truth assignment makes it true.</li>
+</ul>
+</li>
+<li>Logical equivalence and normal forms
+<ul>
+<li>Two formulas $\varphi$ and $\psi$ are <strong>logically equivalent</strong>, written $\varphi \equiv \psi$, if they agree on every truth assignment.</li>
+<li><strong>Conjunctive normal form</strong> (CNF) expresses a formula as a conjunction of disjunctions of literals.</li>
+<li><strong>Disjunctive normal form</strong> (DNF) expresses a formula as a disjunction of conjunctions of literals.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Traversal and Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Graph Traversal and Tours</h1>
+<h2>Summary</h2>
+<p><strong>Graph traversal and tours</strong> concern walks that visit every edge or every vertex of a <a href="/graph_basics.html" class="wikilink">graph</a> under specific constraints. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Eulerian trails and circuits
+<ul>
+<li>An <strong>Eulerian trail</strong> uses every edge exactly once; an <strong>Eulerian circuit</strong> is a closed Eulerian trail.</li>
+<li>A connected graph has an Eulerian circuit if and only if every vertex has even degree; it has an Eulerian trail if and only if exactly $0$ or $2$ vertices have odd degree.</li>
+</ul>
+</li>
+<li>Hamiltonian paths and cycles
+<ul>
+<li>A <strong>Hamiltonian path</strong> visits every vertex exactly once; a <strong>Hamiltonian cycle</strong> is a closed Hamiltonian path.</li>
+<li>No efficient characterization of Hamiltonian graphs is known: HAM-CYCLE is NP-complete, in stark contrast to the Eulerian case.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p>A connected graph has an Eulerian circuit if and only if every vertex has even degree, and an Eulerian trail if and only if exactly $0$ or $2$ vertices have odd degree.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Inclusion–Exclusion Principle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Inclusion–Exclusion Principle</h1>
+<h2>Summary</h2>
+<p>The <strong>inclusion–exclusion principle</strong> gives a formula for the size of a finite union in terms of the sizes of intersections. Part of <a href="/discrete_math_outline.html" class="wikilink">Combinatorics</a>.</p>
+<ul>
+<li>Statement and proof
+<ul>
+<li>The formula alternates signs over all nonempty subcollections of the sets being united.</li>
+<li>The principle is typically proved by induction on the number of sets, or via indicator functions.</li>
+</ul>
+</li>
+<li>Derangements
+<ul>
+<li>The number of <strong>derangements</strong> of $[n]$ (permutations with no fixed points) is
+\[
+D_n = n!\sum_{k=0}^{n} \frac{(-1)^k}{k!},
+\]
+and $D_n / n! \to 1/e$.</li>
+</ul>
+</li>
+<li>Surjection counting
+<ul>
+<li>The number of surjections from $[n]$ to $[k]$ is $\displaystyle\sum_{j=0}^{k} (-1)^j \binom{k}{j} (k-j)^n$.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p>\[
+\left|\bigcup_{i=1}^{n} A_i\right| = \sum_{\emptyset \neq S \subseteq [n]} (-1)^{|S|+1} \left|\bigcap_{i \in S} A_i\right|.
+\]</p>
+</div>
+
+</body>
+</html>

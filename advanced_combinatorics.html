@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Advanced Combinatorics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Advanced Combinatorics</h1>
+<h2>Summary</h2>
+<p><strong>Advanced combinatorics</strong> covers special enumerative sequences and group-theoretic counting techniques that arise in discrete mathematics. Part of <a href="/discrete_math_outline.html" class="wikilink">Combinatorics</a>.</p>
+<ul>
+<li>Catalan numbers
+<ul>
+<li>The <strong>Catalan number</strong> $C_n = \dfrac{1}{n+1}\binom{2n}{n}$ counts balanced parenthesizations, binary trees with $n$ internal nodes, monotone lattice paths, and polygon triangulations.</li>
+</ul>
+</li>
+<li>Stirling numbers
+<ul>
+<li>The <strong>Stirling number of the first kind</strong> $\left[{n \atop k}\right]$ counts permutations of $[n]$ with exactly $k$ cycles.</li>
+<li>The <strong>Stirling number of the second kind</strong> $\left{{n \atop k}\right}$ counts partitions of $[n]$ into $k$ nonempty blocks.</li>
+</ul>
+</li>
+<li>Bell numbers
+<ul>
+<li>The <strong>Bell number</strong> $B_n = \displaystyle\sum_{k=0}^{n} \left{{n \atop k}\right}$ counts all set partitions of $[n]$.</li>
+</ul>
+</li>
+<li>Integer partitions
+<ul>
+<li>An <strong>integer partition</strong> of $n$ is an unordered sum of positive integers equaling $n$; the generating function is $\prod_{k \geq 1} \dfrac{1}{1 - x^k}$.</li>
+</ul>
+</li>
+<li>Burnside's lemma and Pólya enumeration
+<ul>
+<li><strong>Burnside's lemma</strong> counts the number of orbits of a finite group $G$ acting on a set $X$ as $\dfrac{1}{|G|}\displaystyle\sum_{g \in G} |X^g|$, where $X^g$ denotes the set of elements fixed by $g$.</li>
+<li><strong>Pólya's enumeration theorem</strong> refines this with cycle index polynomials for counting colorings up to symmetry.</li>
+</ul>
+</li>
+</ul>
+<div class="lemma">
+<p><strong>Burnside's lemma:</strong> the number of orbits of a finite group $G$ acting on a set $X$ equals $\dfrac{1}{|G|}\displaystyle\sum_{g \in G} |X^g|$.</p>
+</div>
+
+</body>
+</html>

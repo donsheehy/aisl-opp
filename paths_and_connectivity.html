@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Paths and Connectivity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Paths and Connectivity</h1>
+<h2>Summary</h2>
+<p><strong>Paths and connectivity</strong> concern the ways of moving through a <a href="/graph_basics.html" class="wikilink">graph</a> and the resulting reachability structure. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Walks, trails, paths, cycles
+<ul>
+<li>A <strong>walk</strong> is an alternating sequence of vertices and edges.</li>
+<li>A <strong>trail</strong> is a walk with no repeated edge.</li>
+<li>A <strong>path</strong> is a walk with no repeated vertex.</li>
+<li>A <strong>cycle</strong> is a closed path with at least three distinct vertices (in a simple graph).</li>
+</ul>
+</li>
+<li>Connected components
+<ul>
+<li>The relation &quot;there is a walk from $u$ to $v$&quot; is an <a href="/equivalence_relations.html" class="wikilink">equivalence relation</a>; its classes are the <strong>connected components</strong> of $G$.</li>
+</ul>
+</li>
+<li>Vertex and edge connectivity
+<ul>
+<li>The <strong>vertex connectivity</strong> $\kappa(G)$ is the minimum number of vertices whose removal disconnects $G$.</li>
+<li>The <strong>edge connectivity</strong> $\lambda(G)$ is the minimum number of edges whose removal disconnects $G$.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Whitney's theorem:</strong> $\kappa(G) \leq \lambda(G) \leq \delta(G)$, where $\delta(G)$ is the minimum degree.</p>
+</div>
+
+</body>
+</html>

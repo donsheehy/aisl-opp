@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Predicate Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Predicate Logic</h1>
+<h2>Summary</h2>
+<p><strong>Predicate logic</strong> (first-order logic) extends <a href="/propositional_logic.html" class="wikilink">propositional_logic</a> by adding predicates, variables, and quantifiers that allow statements about objects in a domain. Part of <a href="/discrete_math_outline.html" class="wikilink">Logic and Proofs</a>.</p>
+<ul>
+<li>Quantifiers, scope, free vs. bound variables
+<ul>
+<li>The <strong>universal quantifier</strong> $\forall x P(x)$ asserts that $P$ holds for every element $x$ in the domain.</li>
+<li>The <strong>existential quantifier</strong> $\exists x P(x)$ asserts that $P$ holds for at least one element $x$.</li>
+<li>A variable is <strong>bound</strong> if it occurs within the scope of a quantifier on it; otherwise it is <strong>free</strong>.</li>
+</ul>
+</li>
+<li>Nested quantifiers and quantifier negation
+<ul>
+<li>Quantifier order matters: $\forall x \exists y P(x,y)$ is generally not equivalent to $\exists y \forall x P(x,y)$.</li>
+<li>The negation of $\forall x P(x)$ is $\exists x \neg P(x)$, and the negation of $\exists x P(x)$ is $\forall x \neg P(x)$.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

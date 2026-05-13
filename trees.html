@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Trees</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Trees</h1>
+<h2>Summary</h2>
+<p>A <strong>tree</strong> is a connected, acyclic <a href="/graph_basics.html" class="wikilink">graph</a>. Part of <a href="/discrete_math_outline.html" class="wikilink">Graph Theory</a>.</p>
+<ul>
+<li>Characterizations of trees
+<ul>
+<li>A graph $G$ on $n$ vertices is a tree if and only if it is connected with $n-1$ edges, or equivalently acyclic with $n-1$ edges, or equivalently has a unique path between every pair of vertices.</li>
+</ul>
+</li>
+<li>Rooted and binary trees
+<ul>
+<li>A <strong>rooted tree</strong> designates one vertex as the root, inducing parent–child relationships.</li>
+<li>A <strong>binary tree</strong> has each node with at most two children; it has at most $2^h$ leaves at depth $h$.</li>
+</ul>
+</li>
+<li>Spanning trees and minimum spanning trees
+<ul>
+<li>A <strong>spanning tree</strong> of $G$ is a tree subgraph containing every vertex of $G$.</li>
+<li>A <strong>minimum spanning tree</strong> (MST) minimizes total edge weight and can be computed by Kruskal's or Prim's algorithm.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p>For a graph $G$ on $n$ vertices, the following are equivalent: (1) $G$ is a tree; (2) $G$ is connected and has $n-1$ edges; (3) $G$ is acyclic and has $n-1$ edges; (4) every two vertices are connected by a unique path; (5) $G$ is connected and removing any edge disconnects it; (6) $G$ is acyclic and adding any edge creates a unique cycle.</p>
+</div>
+
+</body>
+</html>

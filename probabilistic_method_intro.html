@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Probabilistic Method (Intro)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Probabilistic Method (Intro)</h1>
+<h2>Summary</h2>
+<p>The <strong>probabilistic method</strong> is a non-constructive proof technique, pioneered by Erdős, that establishes the existence of a combinatorial object by showing it occurs with positive probability under a suitable distribution. Part of <a href="/discrete_math_outline.html" class="wikilink">Discrete Probability</a>.</p>
+<ul>
+<li>Existence proofs via probability
+<ul>
+<li>To show some object with property $P$ exists, sample uniformly from a class and prove $P$ holds with positive probability.</li>
+<li>If $\mathbb{E}[X] \ge c$, then there must exist an outcome in which $X \ge c$.</li>
+</ul>
+</li>
+<li>Random graphs
+<ul>
+<li>The <strong>Erdős–Rényi model</strong> $G(n, p)$ includes each edge independently with probability $p$.</li>
+<li><strong>Threshold phenomena</strong> occur when graph properties (connectivity, giant component) appear sharply at a critical $p(n)$.</li>
+<li>Erdős's lower bound on Ramsey numbers via $G(n, 1/2)$ is the classical first application of the method.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

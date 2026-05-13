@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Discrete Mathematics Outline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Discrete Mathematics Outline</h1>
+<h2>Summary</h2>
+<p>This <strong>discrete mathematics outline</strong> is the topic map assembled from standard free online textbooks and courses. See <a href="/discrete_math_resources.html" class="wikilink">discrete_math_resources</a> for the underlying source list.</p>
+<h2>Logic and Proofs</h2>
+<ul>
+<li><a href="/propositional_logic.html" class="wikilink">propositional_logic</a>
+<ul>
+<li>connectives, truth tables, tautologies, satisfiability</li>
+<li>logical equivalence and normal forms (CNF, DNF)</li>
+</ul>
+</li>
+<li><a href="/predicate_logic.html" class="wikilink">predicate_logic</a>
+<ul>
+<li>quantifiers, scope, free vs. bound variables</li>
+<li>nested quantifiers and quantifier negation</li>
+</ul>
+</li>
+<li><a href="/proof_techniques.html" class="wikilink">proof_techniques</a>
+<ul>
+<li>direct proof</li>
+<li>proof by contrapositive</li>
+<li>proof by contradiction</li>
+<li>proof by cases</li>
+<li>constructive vs. non-constructive proofs</li>
+<li>existence and uniqueness proofs</li>
+<li>counterexamples and disproof</li>
+</ul>
+</li>
+<li><a href="/mathematical_induction.html" class="wikilink">mathematical_induction</a>
+<ul>
+<li>weak (ordinary) induction</li>
+<li>strong induction</li>
+<li>structural induction</li>
+<li>well-ordering principle</li>
+</ul>
+</li>
+</ul>
+<h2>Set Theory</h2>
+<ul>
+<li><a href="/sets_basics.html" class="wikilink">sets_basics</a>
+<ul>
+<li>membership, subsets, equality, power sets</li>
+<li>set-builder notation</li>
+</ul>
+</li>
+<li><a href="/set_operations.html" class="wikilink">set_operations</a>
+<ul>
+<li>union, intersection, difference, complement</li>
+<li>Cartesian products</li>
+<li>identities and Venn diagrams</li>
+</ul>
+</li>
+<li><a href="/set_cardinality.html" class="wikilink">set_cardinality</a>
+<ul>
+<li>finite vs. infinite sets</li>
+<li>countable and uncountable sets</li>
+<li>Cantor's theorem and diagonalization</li>
+</ul>
+</li>
+<li><a href="/indexed_families.html" class="wikilink">indexed_families</a>
+<ul>
+<li>generalized unions and intersections</li>
+<li>partitions</li>
+</ul>
+</li>
+</ul>
+<h2>Functions and Relations</h2>
+<ul>
+<li><a href="/functions.html" class="wikilink">functions</a>
+<ul>
+<li>domain, codomain, image, preimage</li>
+<li>injective, surjective, bijective</li>
+<li>composition and inverse functions</li>
+<li>pigeonhole principle (as function-counting tool)</li>
+</ul>
+</li>
+<li><a href="/relations.html" class="wikilink">relations</a>
+<ul>
+<li>reflexive, symmetric, antisymmetric, transitive</li>
+<li>composition and inverse of relations</li>
+</ul>
+</li>
+<li><a href="/equivalence_relations.html" class="wikilink">equivalence_relations</a>
+<ul>
+<li>equivalence classes and quotient sets</li>
+<li>partitions correspondence</li>
+</ul>
+</li>
+<li><a href="/partial_orders.html" class="wikilink">partial_orders</a>
+<ul>
+<li>posets, Hasse diagrams</li>
+<li>total orders, lattices</li>
+<li>chains, antichains, Dilworth's theorem</li>
+</ul>
+</li>
+</ul>
+<h2>Number Theory</h2>
+<ul>
+<li><a href="/divisibility.html" class="wikilink">divisibility</a>
+<ul>
+<li>division algorithm</li>
+</ul>
+</li>
+<li><a href="/gcd.html" class="wikilink">gcd</a>
+<ul>
+<li>greatest common divisor and least common multiple</li>
+<li>Euclidean algorithm and extended Euclidean algorithm</li>
+<li>Bézout's identity</li>
+</ul>
+</li>
+<li><a href="/primes.html" class="wikilink">primes</a>
+<ul>
+<li>fundamental theorem of arithmetic</li>
+<li>infinitude of primes</li>
+<li>sieve of Eratosthenes</li>
+</ul>
+</li>
+<li><a href="/modular_arithmetic.html" class="wikilink">modular_arithmetic</a>
+<ul>
+<li>congruences and residue classes</li>
+<li>modular inverses</li>
+<li>Chinese remainder theorem</li>
+<li>Fermat's little theorem and Euler's theorem</li>
+</ul>
+</li>
+<li><a href="/number_theory_applications.html" class="wikilink">number_theory_applications</a>
+<ul>
+<li>RSA cryptography</li>
+<li>hashing</li>
+<li>pseudorandom number generation</li>
+</ul>
+</li>
+</ul>
+<h2>Combinatorics</h2>
+<ul>
+<li><a href="/basic_counting.html" class="wikilink">basic_counting</a>
+<ul>
+<li>sum and product rules</li>
+<li>subtraction (complement) rule</li>
+<li>division rule</li>
+</ul>
+</li>
+<li><a href="/permutations_and_combinations.html" class="wikilink">permutations_and_combinations</a>
+<ul>
+<li>$k$-permutations $P(n,k)$</li>
+<li>binomial coefficients $\binom{n}{k}$</li>
+<li>permutations with repetition</li>
+<li>combinations with repetition (multisets / stars and bars)</li>
+</ul>
+</li>
+<li><a href="/binomial_identities.html" class="wikilink">binomial_identities</a>
+<ul>
+<li>Pascal's identity and Pascal's triangle</li>
+<li>binomial theorem</li>
+<li>Vandermonde's identity</li>
+<li>combinatorial proofs (double counting)</li>
+</ul>
+</li>
+<li><a href="/pigeonhole_principle.html" class="wikilink">pigeonhole_principle</a>
+<ul>
+<li>simple form</li>
+<li>generalized pigeonhole</li>
+<li>Ramsey-flavored applications</li>
+</ul>
+</li>
+<li><a href="/inclusion_exclusion.html" class="wikilink">inclusion_exclusion</a>
+<ul>
+<li>PIE statement and proof</li>
+<li>derangements</li>
+<li>surjection counting</li>
+</ul>
+</li>
+<li><a href="/recurrence_relations.html" class="wikilink">recurrence_relations</a>
+<ul>
+<li>linear homogeneous recurrences</li>
+<li>linear non-homogeneous recurrences</li>
+<li>characteristic equations</li>
+<li>master theorem (algorithmic context)</li>
+</ul>
+</li>
+<li><a href="/generating_functions.html" class="wikilink">generating_functions</a>
+<ul>
+<li>ordinary generating functions</li>
+<li>exponential generating functions</li>
+<li>solving recurrences via generating functions</li>
+</ul>
+</li>
+<li><a href="/advanced_combinatorics.html" class="wikilink">advanced_combinatorics</a>
+<ul>
+<li>Catalan numbers</li>
+<li>Stirling numbers (1st and 2nd kind)</li>
+<li>Bell numbers</li>
+<li>integer partitions</li>
+<li>Polyá enumeration / Burnside's lemma</li>
+</ul>
+</li>
+</ul>
+<h2>Discrete Probability</h2>
+<ul>
+<li><a href="/probability_basics.html" class="wikilink">probability_basics</a>
+<ul>
+<li>sample spaces, events, axioms</li>
+<li>uniform probability spaces</li>
+</ul>
+</li>
+<li><a href="/conditional_probability.html" class="wikilink">conditional_probability</a>
+<ul>
+<li>definition and law of total probability</li>
+<li>Bayes' theorem</li>
+<li>independence of events</li>
+</ul>
+</li>
+<li><a href="/random_variables.html" class="wikilink">random_variables</a>
+<ul>
+<li>discrete distributions (Bernoulli, binomial, geometric, Poisson)</li>
+<li>probability mass functions</li>
+<li>cumulative distribution functions</li>
+</ul>
+</li>
+<li><a href="/expectation_and_variance.html" class="wikilink">expectation_and_variance</a>
+<ul>
+<li>linearity of expectation</li>
+<li>variance and standard deviation</li>
+<li>covariance and correlation</li>
+</ul>
+</li>
+<li><a href="/probabilistic_inequalities.html" class="wikilink">probabilistic_inequalities</a>
+<ul>
+<li>Markov's inequality</li>
+<li>Chebyshev's inequality</li>
+<li>Chernoff bounds (introductory)</li>
+</ul>
+</li>
+<li><a href="/probabilistic_method_intro.html" class="wikilink">probabilistic_method_intro</a>
+<ul>
+<li>existence proofs via probability</li>
+<li>random graphs (basic)</li>
+</ul>
+</li>
+</ul>
+<h2>Graph Theory</h2>
+<ul>
+<li><a href="/graph_basics.html" class="wikilink">graph_basics</a>
+<ul>
+<li>vertices, edges, degree, handshake lemma</li>
+<li>simple graphs, multigraphs, directed graphs</li>
+<li>subgraphs, isomorphism</li>
+</ul>
+</li>
+<li><a href="/graph_representations.html" class="wikilink">graph_representations</a>
+<ul>
+<li>adjacency matrix</li>
+<li>adjacency list</li>
+<li>incidence matrix</li>
+</ul>
+</li>
+<li><a href="/paths_and_connectivity.html" class="wikilink">paths_and_connectivity</a>
+<ul>
+<li>walks, trails, paths, cycles</li>
+<li>connected components</li>
+<li>vertex/edge connectivity</li>
+</ul>
+</li>
+<li><a href="/trees.html" class="wikilink">trees</a>
+<ul>
+<li>characterizations of trees</li>
+<li>rooted trees, binary trees</li>
+<li>spanning trees and minimum spanning trees</li>
+</ul>
+</li>
+<li><a href="/special_graph_classes.html" class="wikilink">special_graph_classes</a>
+<ul>
+<li>bipartite graphs and König's theorem</li>
+<li>planar graphs and Euler's formula</li>
+<li>Kuratowski's theorem (statement)</li>
+</ul>
+</li>
+<li><a href="/graph_traversal_and_tours.html" class="wikilink">graph_traversal_and_tours</a>
+<ul>
+<li>Eulerian trails and circuits</li>
+<li>Hamiltonian paths and cycles (and hardness note)</li>
+</ul>
+</li>
+<li><a href="/graph_coloring.html" class="wikilink">graph_coloring</a>
+<ul>
+<li>chromatic number</li>
+<li>greedy coloring</li>
+<li>four color theorem (statement)</li>
+</ul>
+</li>
+<li><a href="/matching.html" class="wikilink">matching</a>
+<ul>
+<li>bipartite matching</li>
+<li>Hall's marriage theorem</li>
+</ul>
+</li>
+<li><a href="/network_flow_intro.html" class="wikilink">network_flow_intro</a>
+<ul>
+<li>max-flow min-cut theorem</li>
+<li>augmenting paths</li>
+</ul>
+</li>
+</ul>
+<h2>Sequences, Asymptotics, and Discrete Calculus</h2>
+<ul>
+<li><a href="/sequences.html" class="wikilink">sequences</a>
+<ul>
+<li>arithmetic and geometric sequences</li>
+<li>polynomial and exponential sequences</li>
+</ul>
+</li>
+<li><a href="/asymptotic_notation.html" class="wikilink">asymptotic_notation</a>
+<ul>
+<li>big-O, big-Omega, big-Theta</li>
+<li>little-o, little-omega</li>
+<li>common growth rates</li>
+</ul>
+</li>
+<li><a href="/summations.html" class="wikilink">summations</a>
+<ul>
+<li>sum manipulation rules</li>
+<li>closed forms for common sums</li>
+<li>perturbation method</li>
+</ul>
+</li>
+<li><a href="/discrete_calculus.html" class="wikilink">discrete_calculus</a>
+<ul>
+<li>finite differences</li>
+<li>falling and rising powers</li>
+<li>summation by parts</li>
+</ul>
+</li>
+</ul>
+<h2>Algebraic Structures (Introductory)</h2>
+<ul>
+<li><a href="/binary_operations.html" class="wikilink">binary_operations</a>
+<ul>
+<li>closure, associativity, commutativity, identity, inverses</li>
+</ul>
+</li>
+<li><a href="/groups_intro.html" class="wikilink">groups_intro</a>
+<ul>
+<li>definitions and small examples</li>
+<li>cyclic groups, permutation groups</li>
+</ul>
+</li>
+<li><a href="/boolean_algebra.html" class="wikilink">boolean_algebra</a>
+<ul>
+<li>axioms and identities</li>
+<li>Boolean functions and circuits</li>
+<li>simplification (Karnaugh maps)</li>
+</ul>
+</li>
+</ul>
+<h2>Discrete Structures for Computation</h2>
+<ul>
+<li><a href="/finite_state_machines.html" class="wikilink">finite_state_machines</a>
+<ul>
+<li>DFAs and NFAs (introductory)</li>
+<li>regular expressions and regular languages</li>
+</ul>
+</li>
+<li><a href="/invariants_and_correctness.html" class="wikilink">invariants_and_correctness</a>
+<ul>
+<li>loop invariants</li>
+<li>state-machine invariants</li>
+<li>termination via well-founded orderings</li>
+</ul>
+</li>
+<li><a href="/formal_languages_intro.html" class="wikilink">formal_languages_intro</a>
+<ul>
+<li>alphabets, strings, languages</li>
+<li>context-free grammars (overview)</li>
+</ul>
+</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="/discrete_math_resources.html" class="wikilink">discrete_math_resources</a></li>
+</ul>
+
+</body>
+</html>

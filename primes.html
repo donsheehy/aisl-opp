@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Primes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/hljs-github.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script>
+    async function renderMath() {
+      const response = await fetch('/macros.json');
+      const macros = await response.json();
+      renderMathInElement(document.body, {
+        macros,
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$",   right: "$",   display: false }
+        ]
+      });
+    }
+    document.addEventListener("DOMContentLoaded", renderMath);
+  </script>
+</head>
+<body>
+  <h1>Primes</h1>
+<h2>Summary</h2>
+<p>A <strong>prime</strong> is an integer $p &gt; 1$ whose only positive divisors are $1$ and $p$. Part of <a href="/discrete_math_outline.html" class="wikilink">Number Theory</a>. Builds on <a href="/divisibility.html" class="wikilink">divisibility</a>.</p>
+<ul>
+<li>Fundamental theorem of arithmetic
+<ul>
+<li>Every integer $n &gt; 1$ has a unique factorization into primes, up to ordering.</li>
+</ul>
+</li>
+<li>Infinitude of primes
+<ul>
+<li>Given any finite list of primes, one can construct a prime not on the list.</li>
+</ul>
+</li>
+<li>Sieve of Eratosthenes
+<ul>
+<li>The <strong>sieve of Eratosthenes</strong> enumerates primes up to $n$ by crossing out multiples of each prime up to $\sqrt{n}$, running in $O(n \log \log n)$ time.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><strong>Fundamental theorem of arithmetic:</strong> every integer $n &gt; 1$ has a unique factorization into primes, up to ordering.</p>
+</div>
+<div class="theorem">
+<p>There are infinitely many primes.</p>
+</div>
+<div class="proof">
+<p>Given primes $p_1, \ldots, p_k$, the integer $N = p_1 \cdots p_k + 1$ has a prime factor distinct from each $p_i$.</p>
+</div>
+
+</body>
+</html>
